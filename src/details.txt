@@ -1,0 +1,14 @@
+{
+    // How much memory to allocate to the Amazon Actor
+    // Must be a power of 2
+    "memory": 4096,
+
+Whether to use the JavaScript client to make the call, or to use the API
+    "useClient": false,
+
+    // The fields in each item to return back. All other fields should be ommitted
+    "fields": ["title", "itemUrl", "offer"],
+
+    // The maximum number of items to return back
+    "maxItems": 10
+}

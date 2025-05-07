@@ -1,0 +1,38 @@
+{
+    "title": "Actor caller input schema",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "memory": {
+            "title": "Memory",
+            "type": "integer",
+            "description": "How much memory to allocate to the Amazon Actor",
+            "default": "1024",
+            "minimum": "1024",
+            "maximum": "4096"
+        },
+        "maxItems": {
+            "title": "Maximum items",
+            "type": "integer",
+            "description": "The maximum number of items to return back",
+            "default": "10",
+            "minimum": "1",
+            "maximum": "1000000"
+        },
+        "fields": {
+            "title": "Fields to extract",
+            "type": "array",
+            "description": "The fields in each item to return back. All other fields should be ommitted",
+            "editor": "json",
+            "prefill": "[\"productTitle\", \"productUrl\", \"offer\"]"
+        },
+        "useClient": {
+            "title": "Should Caller use Client?",
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to use the JavaScript client to make the call, or to use the API",
+            "prefill": true
+        }
+    },
+    "required": ["fields", "useClient"]
+}
